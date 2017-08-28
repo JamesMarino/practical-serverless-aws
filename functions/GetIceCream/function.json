@@ -1,0 +1,5 @@
+{
+  "description": "Get Ice Cream",
+  "timeout": 3,
+  "memory": 128
+}

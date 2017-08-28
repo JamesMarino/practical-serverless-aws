@@ -1,0 +1,21 @@
+{
+  "name": "PracticalServerlessAWS",
+  "description": "Practical Serverless Using AWS",
+  "nameTemplate": "ice{{.Function.Name}}",
+  "runtime": "nodejs6.10",
+  "memory": 128,
+  "timeout": 6,
+  "role": "arn:aws:iam::123456789:role/LambdaExecution",
+  "profile": "jamesmarino",
+  "handler": "main.handler",
+  "hooks": {
+    "build": "../../node_modules/.bin/webpack --config ../../config/webpack.config.js --bail",
+    "clean": "rm -f main.js"
+  },
+  "environment": {
+    "mysql_host": "my-instance.rds.amazonaws.com",
+    "mysql_user": "root",
+    "mysql_password": "password",
+    "mysql_database": "MyDatabase"
+  }
+}
